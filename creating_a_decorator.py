@@ -3,7 +3,7 @@ from functools import wraps
 from typing import Callable, List
 
 def time_to_return(func:Callable) -> Callable:
-    @wraps(func)
+    #@wraps(func)
     def wrapper(*agrs, **kwargs) -> None:
         t1:float = time.perf_counter()
         func(*agrs, **kwargs)
@@ -13,7 +13,7 @@ def time_to_return(func:Callable) -> Callable:
 
 @time_to_return
 def weather_in_city(city:str, weather:str) -> None:
-    'inserting some delay to measure time'
+    #inserting some delay to measure time
     time.sleep(2)
     print (f"weather today in {city} is {weather}")
 
